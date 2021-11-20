@@ -21,6 +21,7 @@ const UsuarioSchema = Schema({
     type: String,
     require: true,
     enum: ["ADMIN_ROLE", "USER_ROLE", "VENTAS_ROLE"],
+    default: "USER_ROLE",
   },
   estado: {
     type: Boolean,
@@ -34,7 +35,8 @@ const UsuarioSchema = Schema({
 
 // SUBSCRITA DO TO JSON
 UsuarioSchema.methods.toJSON = function () {
-  const { __v, password, ...usuario } = this.toObject();
+  const { __v, password, _id, ...usuario } = this.toObject();
+  usuario.uid = _id;
   return usuario;
 };
 
