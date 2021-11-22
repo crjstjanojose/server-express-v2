@@ -77,7 +77,7 @@ const buscar = (req, res = response) => {
 
   if (!colecciones.includes(coleccion)) {
     return res.status(400).json({
-      msg: `No existe uma coleccion de nombre ${coleccion} en la base de dados`,
+      msg: `No existe uma coleccion de nombre ${coleccion} en la base de dados.`,
     });
   }
 

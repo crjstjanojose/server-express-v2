@@ -32,11 +32,8 @@ class Server {
   }
 
   middlewares() {
-    //CORS
     this.app.use(cors());
-    // LEITURA E PARSE DE JSON
     this.app.use(express.json());
-    // CONFIGURA A PASTA PUBLIC
     this.app.use(express.static("public"));
   }
 
