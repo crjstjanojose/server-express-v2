@@ -18,7 +18,6 @@ const usuariosPut = async (req, res) => {
   const { id } = req.params;
   const { _id, password, google, correo, ...resto } = req.body;
 
-  //! TODO VALIDAR CONTRA BANCO DE DADOS
   if (password) {
     const salt = bcryptjs.genSaltSync();
     resto.password = bcryptjs.hashSync(password, salt);
